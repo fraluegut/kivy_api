@@ -1,0 +1,33 @@
+#:kivy 1.11.1
+
+
+BoxLayout:
+    orientation: "vertical"
+    size_hint: 1, 1
+    size_hint_min: 200, 200
+    canvas:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    padding: 20
+    spacing: 20
+
+    Label:
+        text: "Nombre:"
+
+    TextInput:
+        id: name_input
+        multiline: False
+
+    Label:
+        text: "Correo electrónico:"
+
+    TextInput:
+        id: email_input
+        multiline: False
+
+    Button:
+        text: "Enviar datos"
+        on_press: root.send_data()
